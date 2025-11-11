@@ -9,7 +9,7 @@ spec:
     server: https://kubernetes.default.svc
     namespace: kubeflow
   source:
-    repoURL: https://github.com/kubeflow/pipelines.git
+    repoURL: https://github.com/s-jaiganesh/pipelines.git
     targetRevision: 2.14.3
     path: manifests/kustomize/env/cert-manager/platform-agnostic-k8s-native
   syncPolicy:
