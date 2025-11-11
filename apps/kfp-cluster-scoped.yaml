@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kfp-cluster-scoped
+  namespace: argocd
+spec:
+  project: default
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: kubeflow
+  source:
+    repoURL: https://github.com/kubeflow/pipelines.git
+    targetRevision: 2.14.3
+    path: manifests/kustomize/cluster-scoped-resources
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
